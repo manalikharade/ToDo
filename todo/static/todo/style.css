@@ -1,0 +1,100 @@
+			html {
+			    font-size: 100%;
+			}
+			body {
+			    background: #f5f6b1;
+			    font-family: 'Open Sans',sans-serif;
+			}
+			.content {
+				    background-color: #f0dfe2;
+			}
+			.container {
+			    width: 600px;
+			    margin: 0 auto;
+			    background: #ffffff;
+			    padding: 20px 0;
+			    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+			}
+			h1 {
+			    font-family: 'Rokkitt', sans-serif;
+			    color: #4b61ae;
+			    text-align: center;
+			    font-weight: 400;
+			    margin: 0;
+			}
+			.inputContainer {
+			    height: 60px;
+			    border-top: 1px solid #e5e5e5;
+			    position: relative;
+			    margin: 0 40px;
+			}
+			input[type="date"], input[type="text"], select {
+			    display: inline-block;
+			    border: none;
+			    border-radius: none;
+			    font-size: 13px;
+			    color: #b4b1b1;
+			    margin: 0 20px;
+			    font-family: 'Open Sans', sans-serif;
+			    font-weight: 600;
+			    letter-spacing: 0.8px;
+			}
+			input[type="date"] {
+			    cursor: pointer;
+			}
+			input[type="date"]:focus, input[type="text"]:focus, select:focus {
+			    outline: none;
+			    background: #ecf0f1;
+			}
+			button {
+				font-family: 'Open Sans', sans-serif;
+			    border-radius: 2px;
+			    border: none;
+			    outline: none;
+			    height: 50px;
+			    font-size: 14px;
+			    color: #fff;
+			    cursor: pointer;
+			    text-transform: uppercase;
+			    -webkit-transition: all 0.3s;
+			    padding-left: 20px;
+			    padding-right: 15px;
+			    margin: 0 30px;
+			}
+			.listAdd,.listEdit {
+			    background: #59516b;
+			    padding-left: 21px;
+			}
+			.listAdd:hover,.listEdit:hover {
+			    background: #303030;
+			}
+			.listDelete {
+			    background: #e74c3c;
+			    padding-left: 20px;
+			}
+			.listDelete:hover {
+			    background: #c0392b;
+			}
+			
+			.taskList {
+			    list-style: none;
+			    padding: 0 20px;
+			}
+			.listItem {
+				border-top: 1px solid #e5e5e5;
+				padding: inherit;
+				font-weight: 600;
+				font-size: 16px;
+				letter-spacing: 0.8px;
+				height: 30px;
+			}
+			.taskList .listItem:nth-child(even) {
+			    background: #fcfcfc;
+			}
+			.taskList .listItem:nth-child(odd) {
+			    background-color: #c9c9c9;
+			}
+			.listCheckbox {
+			    margin-right: 1em;
+			}
+			
