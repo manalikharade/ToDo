@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#container {
+			width: 600px;
+		    margin: 0 auto;
+		    background: #e1f5f6;
+		    padding: 20px 0;
+		    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+		}
+		button {
+			font-family: 'Open Sans', sans-serif;
+		    border-radius: 2px;
+		    border: none;
+		    outline: none;
+		    height: 30px;
+		    font-size: 14px;
+		    color: #fff;
+		    cursor: pointer;
+		    text-transform: uppercase;
+		    -webkit-transition: all 0.3s;
+		    padding-left: 20px;
+		    padding-right: 15px;
+		    margin: 0 30px;
+		}
+		.login,.register {
+			background: #59516b;
+			padding-left: 21px;
+		}
+		.login:hover,.register:hover {
+			    background: #303030;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<div id="container">
+			<form method="post" action="{% url 'index' %}">{% csrf_token %}
+				<h2>Welcome to TODO</h2>
+				<div>
+					<button type="submit" value="Register" name="register" class="register">Register</button>
+					<button type="submit" value="Login" name='login' class="login">Login</button>
+				</div>
+			</form>
+		</div>
+	</center>
+
+</body>
+</html>

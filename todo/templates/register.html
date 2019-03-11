@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="conatiner">
+	<form method="post" action = "{% url 'SignUp' %}">{% csrf_token %}
+		<center>
+			<h2>Registeration</h2>
+			<div id="register" style="border:solid 1px black;padding: 20px;width: fit-content;background-color: beige">
+				<div id ="username">
+					<label><b>Name:</b></label><br>
+					<input type="text" name="name" placeholder="Enter Name" autofocus="" required="" style="height: 30px;">
+				</div><br>
+				<div id="user">
+					<label><b>UserId:</b></label><br>
+	    			<input type="text" name="username" required="" style="height: 30px;">
+				</div>
+				<br>
+				<div id="pwd">
+					<label><b>Password:</b></label><br>
+	    			<input type="Password" name="password" required="" style="height: 30px;">
+				</div>
+	    		<div style="padding: 1em 0 0 3.5em;text-align: left;">
+					<input type="submit" name="register" value="Register" onclick="alert('Successfully registered.Please login to contine..')">
+				</div>
+			</div>
+		</center>
+	</form>
+</div>
+</body>
+</html>

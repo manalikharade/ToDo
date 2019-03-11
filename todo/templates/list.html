@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}">			
+</head>
+<body>
+<div django-app="TaskManager">
+    <div class="container">
+            <div class="content">
+            <h1>A Django TodoApp</h1>
+            <p class="userName"><small>Welcome </small><b>{{user|title}}</b></p>
+            <form action="{% url 'list' %}" method="post">
+            {% csrf_token %} <!-- csrf token for basic security -->
+            	<div class="inputContainer name">
+            		<label>List Name</label>
+            		<input type="text" id="name" name="listname">                    
+            	</div>
+                <div class="inputContainer date">
+                	<label for="dueDate">Due Date</label>
+                    <input type="date" id="dueDate" name="listdate">
+                    
+                </div>
+                <div class="row">
+                    <button class="listAdd" name="listAdd" type="submit">Add list</button>
+                    <button class="listDelete" name="listDelete" formnovalidate="" type="submit" onclick="$('input#sublist').click();">Delete lists</button>
+                    <button class="listEdit" name="listEdit" type="submit" onclick="if(document.querySelectorAll('input[type=\'checkbox\']:checked').length > 1) alert('Please select one list at a time.')">Edit</button>
+                </div>
+            <ul class="taskList">
+            	
+            {% for todo in todos %} 
+                <li class="listItem">
+                    <input type="checkbox" class="listCheckbox" name="checkedbox" id="{{ todo.id }}" value="{{ todo.id }}">
+                    <label for="{{ todo.id }}"><span class="complete-">{{ todo.name }}</span></label>
+                    <strong class="listDate"></i>{{ todo.duedate }}</strong>                      
+                </li>
+            {% endfor %}
+            </ul>     <!-- taskList --> 
+            </form>
+            </div><!-- content -->
+ </div><!-- container -->
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</html>

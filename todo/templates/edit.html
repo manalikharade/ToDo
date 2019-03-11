@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#container {
+			border:solid 1px black;
+			padding: 20px;
+			width: fit-content;
+			background-color: #dbc6db
+		}
+		h1 {
+			    font-family: 'Rokkitt', sans-serif;
+			    color: #4b61ae;
+			    text-align: center;
+			    font-weight: 400;
+			    margin: 0;
+			}
+		span {
+			height: 30px;
+		}
+		button {
+				font-family: 'Open Sans', sans-serif;
+			    border-radius: 2px;
+			    border: none;
+			    outline: none;
+			    height: 30px;
+			    font-size: 14px;
+			    color: #fff;
+			    cursor: pointer;
+			    text-transform: uppercase;
+			    -webkit-transition: all 0.3s;
+			    padding-left: 20px;
+			    padding-right: 15px;
+			    margin: 0 30px;
+			}
+			.save,.cancel {
+			    background: #59516b;
+			    padding-left: 21px;
+			}
+			.save:hover,.cancel:hover {
+			    background: #303030;
+			}
+			
+	</style>
+</head>
+<body>
+	<form method="POST" action="{% url 'Edit' %}">{% csrf_token %}
+		<center>
+		<div id="container">
+			<h1><b>Edit List </b></h1><br>
+			<div class="itemName">			
+				<label>Name: </label>
+				<input type="text" name="listName" value="{{listItem.name}}">
+			</div><br>
+			<div class="itemDuedate">
+			<label>Recorded DueDate: </label>
+				<input type="text" name="currentDueDate" value="{{listItem.duedate}}">
+				<label>New DueDate: </label>
+				<input type="Date" name="newDueDate">
+			</div>
+			<br>
+			<div>
+				<button type="submit" name="save" class="save" value="{{listItem.id}}">Save</button>
+				<button type="submit" name="cancel" class="cancel" value="{{listItem.id}}">Cancel</button>
+			</div>
+		</div>
+	</center>
+	</form>
+</body>
+</html>
