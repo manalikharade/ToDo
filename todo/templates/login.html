@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#container {
+			width: 600px;
+		    margin: 0 auto;
+		    background: #e1f5f6;
+		    padding: 20px 0;
+		    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+		}
+		h2 {
+			font-family: 'Rokkitt', sans-serif;
+			color: #4b61ae;
+			text-align: center;
+			font-weight: 400;
+		}
+		.login{
+		    border: none;
+		    outline: none;
+		    height: 30px;
+		    font-size: 14px;
+		    color: #fff;
+		    cursor: pointer;
+		    text-transform: uppercase;
+		    -webkit-transition: all 0.3s;
+		    padding-left: 20px;
+		    padding-right: 15px;
+		    margin: 0 30px;
+		}
+		.login {
+			background: #59516b;
+			padding-left: 21px;
+		}
+		.login:hover {
+			    background: #303030;
+		}
+	</style>
+</head>
+<body>
+<div id="container">
+	<form method="post" action= "{% url 'SignIn' %}">{% csrf_token %}
+		<center>
+			<h2>Login</h2>
+			<div id="login">
+				<div id="user">
+		    		<input type="text" name="username" placeholder="Enter UserName" autofocus="" style="height: 30px;">
+				</div>
+				<br>
+				<div id="pwd">
+		    		<input type="Password" name="password" placeholder="Enter Password" required="" style="	height: 30px;">
+				</div><br>
+		    	<div>
+					<button type="submit" name="login" class='login'>Login</button>
+				</div>
+			</div>
+	</center>
+</form>
+</div>
+</body>
+</html>
